@@ -1,0 +1,343 @@
+/* Definicja Palety Barw */
+:root {
+    /* Ciemny Motyw */
+    --color-dark-primary: #1e1e1e; /* Bardzo ciemne tło */
+    --color-dark-secondary: #2c2c2c; /* Ciemniejsze tło sekcji */
+    --color-text-light: #f0f0f0; /* Jasny tekst dla kontrastu */
+
+    /* Ciepłe Barwy Akcentowe */
+    --color-accent-red: #e74c3c; /* Czerwony - akcent, przyciski */
+    --color-accent-yellow: #f1c40f; /* Żółty/musztardowy - wyróżnienia, logo */
+    --color-accent-green: #2ecc71; /* Zielony - świeżość, wege opcje */
+}
+
+/* Resetowanie i Podstawowa Stylizacja */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-dark-primary);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.background-placeholder {
+    /* To jest placeholder, który zastąpisz swoją grafiką */
+    height: 100vh; /* Pełna wysokość widoku */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('placeholder-tlo.jpg'); /* ZMIEŃ NA URL SWOJEJ GRAFIKI */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* Lekka przezroczystość, by nie dominowało */
+    z-index: -1;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Półprzezroczyste czarne tło */
+    padding: 15px 5%;
+    border-bottom: 3px solid var(--color-accent-red);
+}
+
+.header-content {
+    display: flex; /* Domyślny układ horyzontalny dla PC */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--color-accent-yellow);
+    font-size: 2em;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.header nav ul li a:hover {
+    color: var(--color-dark-primary);
+    background-color: var(--color-accent-yellow);
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px 5%;
+}
+
+.section {
+    background-color: var(--color-dark-secondary);
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-accent-red);
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.menu-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.drinks-section {
+    padding: 30px;
+    background-color: var(--color-dark-secondary);
+    border-radius: 10px;
+    border-left: 5px solid var(--color-accent-red);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin: 0;
+}
+
+.drinks-list {
+    list-style: none;
+    padding: 0;
+}
+
+.drink-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 10px;
+    margin-bottom: 5px;
+    background-color: var(--color-dark-primary);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.drink-item:hover {
+    background-color: #353535;
+}
+
+.drink-name {
+    font-size: 1em;
+    color: var(--color-text-light);
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.drink-price {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-accent-yellow);
+    white-space: nowrap;
+}
+
+.drinks-section .subsection-title {
+    color: var(--color-accent-red);
+    font-size: 1.6em;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid var(--color-accent-yellow);
+    padding-bottom: 8px;
+}
+
+/* Placeholder dla Obrazu Produktu */
+.item-visual-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: var(--color-accent-red);
+    font-weight: bold;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Szczegóły Produktu */
+.item-details {
+    padding: 15px;
+    text-align: center;
+    background-color: #383838;
+}
+
+.item-details h3 {
+    color: var(--color-accent-yellow);
+    margin-bottom: 10px;
+}
+
+.item-details .description {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.item-details .price {
+    font-weight: bold;
+    color: var(--color-accent-green);
+    font-size: 1.1em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sekcja O Nas */
+.info-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hours h3 {
+    color: var(--color-accent-red);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Sekcja Kontakt */
+.contact-info p {
+    margin: 10px 0;
+}
+
+/* Sekcja Wydarzenia */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-item {
+    padding: 15px;
+    background-color: var(--color-dark-primary);
+    border-radius: 8px;
+    border-left: 5px solid var(--color-accent-yellow);
+}
+
+.event-title {
+    color: var(--color-accent-red);
+    margin-bottom: 5px;
+}
+
+.events-cta {
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-accent-green);
+    margin-top: 10px;
+}
+
+/* Stopka */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-dark-secondary);
+    border-top: 2px solid var(--color-accent-yellow);
+    color: var(--color-text-light);
+    font-size: 0.9em;
+}
+
+/* Zapytanie Medialne dla urządzeń do 900px (tablet i mniejsze) */
+@media (max-width: 900px) {
+
+    /* Zmniejszenie paddingu głównego */
+    .header, main {
+        padding: 15px 3%;
+    }
+
+    /* --- Nagłówek (DWULINIOWY UKŁAD) --- */
+
+    .header-content {
+        /* Przełącza układ na pionowy */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px; /* Odstęp między logo a nawigacją */
+        font-size: 2em; /* Rozmiar logo pozostaje duży, na środku */
+    }
+
+    .header nav ul {
+        /* Pozostaje horyzontalny, ale jest wyśrodkowany */
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 5px; /* Mały odstęp od krawędzi nagłówka */
+    }
+
+    .header nav ul li {
+        margin: 0 5px; /* Mały margines między linkami */
+    }
+
+    .header nav ul li a {
+        padding: 5px 8px; /* Zmniejszamy padding dla kompaktowego wyglądu */
+        font-size: 0.9em;
+    }
+
+    /* --- Sekcja Menu --- (Bez zmian w stosunku do poprzedniej modyfikacji) */
+
+    .menu-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .main-dishes-column {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .item-visual-placeholder,
+    .menu-item img {
+        height: 150px;
+    }
+
+    .drinks-section {
+        border-left: none;
+        border-top: 5px solid var(--color-accent-red);
+        padding: 20px;
+    }
+
+    /* Sekcja O Nas */
+    .info-content {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .info-content p {
+        margin-bottom: 15px;
+    }
+
+    .hours {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
